@@ -58,6 +58,7 @@ public class ViewPanelNew extends javax.swing.JPanel {
         patientTypeComboBox = new javax.swing.JComboBox<>();
         patientTypeLabelName = new javax.swing.JLabel();
         titleLabel = new javax.swing.JLabel();
+        imageLabel = new javax.swing.JLabel();
 
         messageTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,6 +148,11 @@ public class ViewPanelNew extends javax.swing.JPanel {
         genderButtonGroup.add(otherRadioButton);
         otherRadioButton.setFont(new java.awt.Font("Kailasa", 1, 13)); // NOI18N
         otherRadioButton.setText("Prefer not to say");
+        otherRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                otherRadioButtonActionPerformed(evt);
+            }
+        });
 
         emailLabelName.setFont(new java.awt.Font("Kailasa", 1, 13)); // NOI18N
         emailLabelName.setText("Email:");
@@ -182,60 +188,68 @@ public class ViewPanelNew extends javax.swing.JPanel {
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleLabel.setText("VIEW PATIENT FORM");
 
+        imageLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(264, 264, 264)
+                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(116, 116, 116)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(116, 116, 116)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lastNameLabel)
-                            .addComponent(firstNameLabel)
-                            .addComponent(ageLabelName)
-                            .addComponent(emailLabelName)
-                            .addComponent(genderLabelName)
-                            .addComponent(patientTypeLabelName)
-                            .addComponent(messageLabelName1)
-                            .addComponent(imageUploadLabelName))
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(uploadButton, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(firstNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(ageTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(emailTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(lastNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(maleRadioButton)
-                            .addComponent(femaleRadioButton)
-                            .addComponent(messageTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(otherRadioButton)
-                            .addComponent(patientTypeComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(264, 264, 264)
-                        .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(271, Short.MAX_VALUE))
+                    .addComponent(lastNameLabel)
+                    .addComponent(firstNameLabel)
+                    .addComponent(ageLabelName)
+                    .addComponent(emailLabelName)
+                    .addComponent(genderLabelName)
+                    .addComponent(patientTypeLabelName)
+                    .addComponent(messageLabelName1)
+                    .addComponent(imageUploadLabelName))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(uploadButton, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(firstNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(ageTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(emailTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(lastNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(maleRadioButton)
+                    .addComponent(femaleRadioButton)
+                    .addComponent(messageTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(otherRadioButton)
+                    .addComponent(patientTypeComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
+                .addComponent(imageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(firstNameLabel))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lastNameLabel)
-                    .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ageLabelName)
-                    .addComponent(ageTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailLabelName)
-                    .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(firstNameLabel))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lastNameLabel)
+                            .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ageLabelName)
+                            .addComponent(ageTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(emailLabelName)
+                            .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(imageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(genderLabelName)
@@ -308,58 +322,62 @@ public class ViewPanelNew extends javax.swing.JPanel {
 
     private void firstNameTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_firstNameTextFieldKeyReleased
         // TODO add your handling code here:
-        String firstName = firstNameTextField.getText();
-        if (firstName.isEmpty() || !firstName.matches("^[a-zA-Z]+$")) {
-            JOptionPane.showMessageDialog(null, "Enter a first valid name");
-        }
+//        String firstName = firstNameTextField.getText();
+//        if (firstName.isEmpty() || !firstName.matches("^[a-zA-Z]+$")) {
+//            JOptionPane.showMessageDialog(null, "Enter a first valid name");
+//        }
     }//GEN-LAST:event_firstNameTextFieldKeyReleased
 
     private void lastNameTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lastNameTextFieldKeyReleased
         // TODO add your handling code here:
-        String lastName = lastNameTextField.getText();
-        if (lastName.isEmpty() || !lastName.matches("^[a-zA-Z]+$")) {
-            JOptionPane.showMessageDialog(null, "Enter a last valid name");
-        }
+//        String lastName = lastNameTextField.getText();
+//        if (lastName.isEmpty() || !lastName.matches("^[a-zA-Z]+$")) {
+//            JOptionPane.showMessageDialog(null, "Enter a last valid name");
+//        }
     }//GEN-LAST:event_lastNameTextFieldKeyReleased
 
     private void ageTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ageTextFieldKeyPressed
         // TODO add your handling code here:
-        String age = ageTextField.getText();
-        if (!age.matches("\\d*")|| age.isEmpty()) { // Check if the input is a digit
-            JOptionPane.showMessageDialog(null, "Please enter a valid age.");
-            ageTextField.setText("");
-        }
+//        String age = ageTextField.getText();
+//        if (!age.matches("\\d*")|| age.isEmpty()) { // Check if the input is a digit
+//            JOptionPane.showMessageDialog(null, "Please enter a valid age.");
+//            ageTextField.setText("");
+//        }
     }//GEN-LAST:event_ageTextFieldKeyPressed
 
     private void emailTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_emailTextFieldKeyReleased
         // TODO add your handling code here:
-        String email = (String)emailTextField.getText();
-        if (!email.contains("@") || !email.endsWith(".com")) {
-            JOptionPane.showMessageDialog(null, "Enter a valid email address");
-        }
+//        String email = (String)emailTextField.getText();
+//        if (!email.contains("@") || !email.endsWith(".com")) {
+//            JOptionPane.showMessageDialog(null, "Enter a valid email address");
+//        }
     }//GEN-LAST:event_emailTextFieldKeyReleased
 
     private void messageTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_messageTextFieldKeyReleased
         // TODO add your handling code here:
-        String message = messageTextField.getText();
-        if (message.isEmpty()){
-            JOptionPane.showMessageDialog(null, "Please enter a message");
-        }
+//        String message = messageTextField.getText();
+//        if (message.isEmpty()){
+//            JOptionPane.showMessageDialog(null, "Please enter a message");
+//        }
     }//GEN-LAST:event_messageTextFieldKeyReleased
 
     private void patientTypeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientTypeComboBoxActionPerformed
         // TODO add your handling code here:
-        String patientType = (String) patientTypeComboBox.getSelectedItem();
-        if (patientType == null || patientType.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please select patient type.");
-        } else if (!patientType.equals("General") && !patientType.equals("Specific") && !patientType.equals("Emergency")) {
-            JOptionPane.showMessageDialog(this, "Invalid type selection");
-        }
+//        String patientType = (String) patientTypeComboBox.getSelectedItem();
+//        if (patientType == null || patientType.isEmpty()) {
+//            JOptionPane.showMessageDialog(this, "Please select patient type.");
+//        } else if (!patientType.equals("General") && !patientType.equals("Specific") && !patientType.equals("Emergency")) {
+//            JOptionPane.showMessageDialog(this, "Invalid type selection");
+//        }
     }//GEN-LAST:event_patientTypeComboBoxActionPerformed
 
     private void femaleRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_femaleRadioButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_femaleRadioButtonActionPerformed
+
+    private void otherRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_otherRadioButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_otherRadioButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -372,6 +390,7 @@ public class ViewPanelNew extends javax.swing.JPanel {
     private javax.swing.JTextField firstNameTextField;
     private javax.swing.ButtonGroup genderButtonGroup;
     private javax.swing.JLabel genderLabelName;
+    private javax.swing.JLabel imageLabel;
     private javax.swing.JLabel imageUploadLabelName;
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JTextField lastNameTextField;
@@ -385,12 +404,12 @@ public class ViewPanelNew extends javax.swing.JPanel {
     private javax.swing.JButton uploadButton;
     // End of variables declaration//GEN-END:variables
 
- private void setRadioButtonSelection(String selectedRadioButton) {
-    if (selectedRadioButton != null) {
-        switch (selectedRadioButton) {
-            case "MALE USER" -> maleRadioButton.setSelected(true);
-            case "FEMALE USER" -> femaleRadioButton.setSelected(true);
-            case "NOT SPECIFIED" -> otherRadioButton.setSelected(true);
+ private void setRadioButtonSelection(String genderButtonGroup) {
+    if (genderButtonGroup != null) {
+        switch (genderButtonGroup) {
+            case "Male" -> maleRadioButton.setSelected(true);
+            case "Female" -> femaleRadioButton.setSelected(true);
+            case "Prefer not to say" -> otherRadioButton.setSelected(true);
             default -> {
             }
         }
@@ -406,6 +425,7 @@ private void setTypeButtonSelection(String selectedType) {
         lastNameTextField.setText(this.newPatient.getLastName());
         ageTextField.setText(this.newPatient.getAge());
         emailTextField.setText(this.newPatient.getEmail());
+        messageTextField.setText(this.newPatient.getMessage());
         setRadioButtonSelection(this.newPatient.getGender());
         setTypeButtonSelection(this.newPatient.getPatientType());
         imageLabel.setIcon(this.newPatient.getIcon());

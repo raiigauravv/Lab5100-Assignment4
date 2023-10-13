@@ -61,6 +61,7 @@ public class formPanel extends javax.swing.JPanel {
         patientTypeLabelName = new javax.swing.JLabel();
         titleLabel = new javax.swing.JLabel();
         maleRadioButton = new javax.swing.JRadioButton();
+        imageLabel = new javax.swing.JLabel();
 
         messageTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,6 +180,7 @@ public class formPanel extends javax.swing.JPanel {
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleLabel.setText("REGISTRATION FORM");
 
+        genderButtonGroup.add(maleRadioButton);
         maleRadioButton.setFont(new java.awt.Font("Kailasa", 1, 13)); // NOI18N
         maleRadioButton.setText("Male");
         maleRadioButton.addActionListener(new java.awt.event.ActionListener() {
@@ -187,15 +189,14 @@ public class formPanel extends javax.swing.JPanel {
             }
         });
 
+        imageLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(205, 205, 205)
-                        .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(116, 116, 116)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,42 +210,54 @@ public class formPanel extends javax.swing.JPanel {
                             .addComponent(imageUploadLabelName))
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(uploadButton, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(firstNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(ageTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(emailTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(lastNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                            .addComponent(uploadButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(firstNameTextField)
+                            .addComponent(ageTextField)
+                            .addComponent(emailTextField)
+                            .addComponent(lastNameTextField)
                             .addComponent(femaleRadioButton)
-                            .addComponent(messageTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                            .addComponent(messageTextField)
                             .addComponent(otherRadioButton)
-                            .addComponent(patientTypeComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(maleRadioButton)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
-                        .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(330, Short.MAX_VALUE))
+                            .addComponent(patientTypeComboBox, 0, 195, Short.MAX_VALUE)
+                            .addComponent(maleRadioButton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)))
+                .addComponent(imageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(101, 101, 101))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(164, 164, 164)
+                .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(firstNameLabel))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lastNameLabel)
-                    .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ageLabelName)
-                    .addComponent(ageTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailLabelName)
-                    .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(firstNameLabel))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lastNameLabel)
+                            .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ageLabelName)
+                            .addComponent(ageTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(emailLabelName)
+                            .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(imageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(genderLabelName)
                     .addComponent(maleRadioButton))
@@ -252,7 +265,7 @@ public class formPanel extends javax.swing.JPanel {
                 .addComponent(femaleRadioButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(otherRadioButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(patientTypeLabelName)
                     .addComponent(patientTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -264,9 +277,9 @@ public class formPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(imageUploadLabelName)
                     .addComponent(uploadButton))
-                .addGap(65, 65, 65)
+                .addGap(78, 78, 78)
                 .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                .addGap(20, 20, 20))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -281,9 +294,7 @@ public class formPanel extends javax.swing.JPanel {
              if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
             try {
             BufferedImage img = ImageIO.read(fileChooser.getSelectedFile());
-            int width = 60;
-            int height = 80;
-            Image scaledImage = img.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+            Image scaledImage = img.getScaledInstance(imageLabel.getWidth(), imageLabel.getHeight(), Image.SCALE_SMOOTH);
             if (scaledImage != null) {
                 icon = new ImageIcon(scaledImage);
                 imageLabel.setIcon(icon); 
@@ -314,20 +325,14 @@ public class formPanel extends javax.swing.JPanel {
         String genderField = "";
         String patientType = (String) patientTypeComboBox.getSelectedItem();
         String messageField = messageTextField.getText();
-
-        if (maleRadioButton.isSelected()) {
-            genderField = maleRadioButton.getActionCommand();
-        } else if (femaleRadioButton.isSelected()) {
-            genderField = femaleRadioButton.getActionCommand();
-        } else if (otherRadioButton.isSelected()) {
-            genderField = otherRadioButton.getActionCommand();
-        }
-
-        String emailRegex = "^[A-Za-z0-9+_.-]+@(.+)$";
-        if (!emailField.matches(emailRegex)) {
-            JOptionPane.showMessageDialog(this, "Invalid email address", "Validation Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+        
+        if (firstName.isEmpty() || !firstName.matches("^[a-zA-Z]+$")) {
+            JOptionPane.showMessageDialog(this, "Enter a first valid name");
+        } 
+       
+        if (lastName.isEmpty() || !firstName.matches("^[a-zA-Z]+$")) {
+            JOptionPane.showMessageDialog(this, "Enter a last valid name");
+        } 
         try {
             int ageValue = Integer.parseInt(ageField);
             if (ageValue <= 0) {
@@ -338,14 +343,35 @@ public class formPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Invalid age format", "Validation Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
-       if (firstName.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "First name cannot be empty");
-        } else if (lastName.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Last name cannot be empty");
-        } else {
-            JOptionPane.showMessageDialog(this, "Registration successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        String emailRegex = "^[A-Za-z0-9+_.-]+@(.+)$";
+        if (!emailField.matches(emailRegex)) {
+            JOptionPane.showMessageDialog(this, "Invalid Email", "Validation Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
+       
+        if (maleRadioButton.isSelected()) {
+            genderField = maleRadioButton.getActionCommand();
+        } else if (femaleRadioButton.isSelected()) {
+            genderField = femaleRadioButton.getActionCommand();
+        } else if (otherRadioButton.isSelected()) {
+            genderField = otherRadioButton.getActionCommand();
+        } else if (genderButtonGroup.isSelected(null)) {
+                JOptionPane.showMessageDialog(null,"please select your gender");
+        }else {
+                JOptionPane.showMessageDialog(null,"gender");
+        }
+        
+        if (patientType == null || patientType.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Please select patient type.");
+        } else if (!patientType.equals("General") && !patientType.equals("Specific") && !patientType.equals("Emergency")) {
+                JOptionPane.showMessageDialog(this, "Invalid type selection");
+        }
+        
+        if (messageField.isEmpty()){
+                JOptionPane.showMessageDialog(null, "Please enter a message");
+          }
+        
+    JOptionPane.showMessageDialog(this, firstName+" "+lastName+" \n"+ageField+" \n"+emailField+" \n"+genderField+" \n"+messageField+" \n"+patientType+" \n", "User Information", HEIGHT);    
        
        
         Patient newPatient = new Patient();
@@ -439,6 +465,7 @@ public class formPanel extends javax.swing.JPanel {
     private javax.swing.JTextField firstNameTextField;
     private javax.swing.ButtonGroup genderButtonGroup;
     private javax.swing.JLabel genderLabelName;
+    private javax.swing.JLabel imageLabel;
     private javax.swing.JLabel imageUploadLabelName;
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JTextField lastNameTextField;

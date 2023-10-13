@@ -18,6 +18,7 @@ public class Patient {
     String gender;
     String patientType;
     String message;
+    String date;
     ImageIcon icon;
 
     public String getFirstName() {
@@ -83,6 +84,14 @@ public class Patient {
     public void setIcon(ImageIcon icon) {
         this.icon = icon;
     }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    } 
 
     
     
